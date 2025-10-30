@@ -1,0 +1,49 @@
+// int?òï ?ä§?Éù IntStack?ùò ?Ç¨?ö©
+#include <stdio.h>
+#include "11_IntStack.h"
+
+int main(void)
+{
+    IntStack s;
+    if (Initialize(&s, 64) == -1) {
+        puts("?ä§?Éù ?Éù?Ñ±?óê ?ã§?å®?ñà?äµ?ãà?ã§.");
+        return 1;
+    }
+
+    while (1) {
+        int menu, x;
+        printf("?òÑ?û¨ ?ç∞?ù¥?Ñ∞ ?àò: %d / %d\n", Size(&s), Capacity(&s));
+        printf("(1)?ë∏?ãú (2)?åù (3)?îº?Å¨ (4)Ï∂úÎ†• (0)Ï¢ÖÎ£å: ");
+        scanf("%d", &menu);
+
+        if (menu == 0) break;
+        switch (menu) {
+         case 1: /*--- ?ë∏?ãú ---*/
+                 printf("?ç∞?ù¥?Ñ∞: ");
+                 scanf("%d", &x);
+                 if (Push(&s, x) == -1)
+                    puts("\a?ò§Î•?: ?ë∏?ãú?óê ?ã§?å®?ñà?äµ?ãà?ã§.");
+                 break;
+
+         case 2: /*--- ?åù ---*/
+                 if (Pop(&s, &x) == -1)
+                    puts("\a?ò§Î•?: ?åù?óê ?ã§?å®?ñà?äµ?ãà?ã§.");
+                 else
+                    printf("?åù ?ç∞?ù¥?Ñ∞?äî %d?ûÖ?ãà?ã§.\n", x);
+                 break;
+
+         case 3: /*--- ?îº?Å¨ ---*/
+                 if (Peek(&s, &x) == -1)
+                    puts("\a?ò§Î•?: ?îº?Å¨?óê ?ã§?å®?ñà?äµ?ãà?ã§.");
+                 else
+                    printf("?îº?Å¨ ?ç∞?ù¥?Ñ∞?äî %d?ûÖ?ãà?ã§.\n", x);
+                 break;
+
+         case 4: /*--- Ï∂úÎ†• ---*/
+                 Print(&s);
+                 break;
+        }
+    }
+    Terminate(&s);
+    return 0;
+}
