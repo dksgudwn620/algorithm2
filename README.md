@@ -113,44 +113,6 @@ $ ./bubble_sort
 정렬 후: 1 2 3 5 8
 ```
 
----
-
-## ⚙️ 컴파일 및 실행 방법
-
-각 예제는 개별 실행이 가능합니다.
-
-```bash
-gcc example.c -o example
-./example
-```
-
-예시:
-
-```bash
-gcc average_input.c -o average_input
-./average_input
-```
-
-또는 모든 예제를 한 번에 컴파일:
-
-```bash
-gcc *.c -o all_examples
-```
-
----
-
-## 🧾 참고 사항
-
-* 모든 예제는 **정적 배열**(`malloc` 없음)로 작성.
-* **K&R 스타일** 코드 포맷 사용.
-* `gcc` 또는 `clang` 환경에서 컴파일 확인 완료.
-
----
-
-📌 **작성자:** gpt
-📅 **학습 범위:** 기초문법 ~ 탐색 전까지
-💡 **목표:** 스택 학습 전 기초 알고리즘 완벽 복습
-
 gcc -o test test.c
 ./test
 
